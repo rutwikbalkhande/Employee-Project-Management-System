@@ -10,7 +10,6 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,11 +21,10 @@ import java.util.List;
 @RequestMapping("/api/project")
 @Slf4j
 @Tag(name="Project API")
-@RequiredArgsConstructor
 public class ProjectController {
 
-
-    private final ProjectService projectService;
+    @Autowired
+    private ProjectService projectService;
 
 
     @PostMapping("/create")
